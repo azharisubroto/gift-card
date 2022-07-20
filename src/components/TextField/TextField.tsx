@@ -1,0 +1,41 @@
+import React, { FC, InputHTMLAttributes } from 'react';
+import { tw } from 'twind/css';
+
+interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
+  name: string;
+  label: string;
+}
+
+const TextField: FC<InputProps> = ({ name, label, ...rest }) => (
+  <div className="mb-3 xl:w-96">
+    {label && (
+      <label htmlFor={`${name}`} className={tw([`form-label`, `inline-block`, `mb-2`, `text-gray-700`, `text-xl`])}>
+        {label}
+      </label>
+    )}
+
+    <input
+      id={name}
+      name={name}
+      {...rest}
+      className={tw([
+        `form-control`,
+        `block`,
+        `w-full`,
+        `px-4`,
+        `py-2`,
+        `text-xl`,
+        `font-normal`,
+        `text-gray-700`,
+        `bg-white bg-clip-padding`,
+        `border border-solid border-gray-300`,
+        `rounded`,
+        `transition`,
+        `ease-in-out`,
+        `m-0`
+      ])}
+    />
+  </div>
+);
+
+export default TextField;
