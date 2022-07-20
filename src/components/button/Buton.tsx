@@ -8,14 +8,20 @@ interface Props {
 }
 
 const Button = ({ primary, modifier, children, isLoading, ...rest }: Props) => {
-  const baseStyle = `font-sans font-medium py-2 px-4 border rounded disabled:opacity-75 disabled:bg-gray-500`;
+  const baseStyle = `font-sans font-medium py-2 px-4 border rounded disabled:opacity-75 disabled:bg-gray-500 px-16`;
   const styles = primary
-    ? `bg-green-600 hover:bg-green-600 text-white`
+    ? `hover:bg-green-400 text-white bg-opacity-75`
     : `bg-white text-gray-600 border-gray-300 hover:bg-gray-100`;
 
   return (
     <button disabled={isLoading} type="button" className={tw(`${baseStyle} ${styles} ${modifier ?? ``}`)} {...rest}>
       {isLoading ? `Processing...` : children}
+
+      <style jsx>{`
+        button {
+          background: ${primary ? `#58b965` : `#fff`};
+        }
+      `}</style>
     </button>
   );
 };

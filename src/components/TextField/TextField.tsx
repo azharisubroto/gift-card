@@ -30,11 +30,13 @@ const TextField: FC<InputProps> = ({ name, label, ...rest }) => (
         `font-normal`,
         `text-gray-700`,
         `bg-white bg-clip-padding`,
-        `border border-solid border-gray-300`,
-        `rounded`,
+        `border border-2 border-solid border-gray-300`,
+        `rounded-md`,
         `transition`,
         `ease-in-out`,
-        `m-0`
+        `m-0`,
+        `focus:outline-none`,
+        `focus:border-green-600`
       ])}
     />
   </div>
