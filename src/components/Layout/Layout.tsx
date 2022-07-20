@@ -3,13 +3,13 @@ import Header from '../Header';
 import { NextSeo, NextSeoProps } from 'next-seo';
 import { tw } from 'twind/css';
 
-interface ILayoutDefault {
+interface LayoutProps {
   children?: React.ReactNode;
   pageTitle?: string;
   nextSeoProps?: Partial<NextSeoProps>;
 }
 
-const LayoutDefault = ({ children, nextSeoProps, ...rest }: ILayoutDefault) => (
+const Layout = ({ children, nextSeoProps, ...rest }: LayoutProps) => (
   <main
     {...rest}
     className={tw([`bg-white`, `max-w-4xl`, `mx-auto`, `shadow-xl`, `rounded-md`, `mt-8`, `overflow-hidden`])}>
@@ -30,4 +30,4 @@ const LayoutDefault = ({ children, nextSeoProps, ...rest }: ILayoutDefault) => (
   </main>
 );
 
-export default LayoutDefault;
+export default Layout;

@@ -7,9 +7,11 @@ interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
 }
 
 const TextField: FC<InputProps> = ({ name, label, ...rest }) => (
-  <div className="mb-3 xl:w-96">
+  <div className={tw(`mb-6 xl:w-96`)}>
     {label && (
-      <label htmlFor={`${name}`} className={tw([`form-label`, `inline-block`, `mb-2`, `text-gray-700`, `text-xl`])}>
+      <label
+        htmlFor={`${name}`}
+        className={tw([`form-label`, `inline-block`, `mb-2`, `text-gray-700`, `text-md`, `block`])}>
         {label}
       </label>
     )}
