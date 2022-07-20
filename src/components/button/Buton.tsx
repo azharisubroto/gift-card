@@ -10,7 +10,7 @@ interface Props {
 const Button = ({ primary, modifier, children, isLoading, ...rest }: Props) => {
   const baseStyle = `font-sans font-medium py-2 px-4 border rounded disabled:opacity-75 disabled:bg-gray-500`;
   const styles = primary
-    ? `bg-success border-success hover:bg-success text-vanilla`
+    ? `bg-green-600 hover:bg-green-600 text-white`
     : `bg-white text-gray-600 border-gray-300 hover:bg-gray-100`;
 
   return (

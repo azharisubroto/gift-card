@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import Layout from '@/components/Layout';
 import TextField from '@/components/TextField';
+import Button from '@/components/Button';
 import { tw } from 'twind/css';
 
 export default function Home() {
@@ -30,9 +31,11 @@ export default function Home() {
           <TextField label="Message" name="message" type="text" value={form.message} onChange={handleChange} />
 
           <TextField label="From" name="from" type="text" value={form.from} onChange={handleChange} />
+
+          <Button primary>Download</Button>
         </form>
 
-        <pre>{JSON.stringify(form, null, 2)}</pre>
+        {/* <pre>{JSON.stringify(form, null, 2)}</pre> */}
       </section>
     </Layout>
   );
