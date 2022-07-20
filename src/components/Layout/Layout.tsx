@@ -12,7 +12,7 @@ interface LayoutProps {
 const Layout = ({ children, nextSeoProps, ...rest }: LayoutProps) => (
   <main
     {...rest}
-    className={tw([`bg-white`, `max-w-4xl`, `mx-auto`, `shadow-xl`, `rounded-md`, `mt-8`, `overflow-hidden`])}>
+    className={tw([`bg-white`, `max-w-3xl`, `mx-auto`, `shadow-xl`, `rounded-md`, `mt-8`, `overflow-hidden`])}>
     <NextSeo
       openGraph={{
         url: process.env.NEXT_PUBLIC_APP_URL,

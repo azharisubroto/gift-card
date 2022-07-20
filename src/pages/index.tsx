@@ -2,6 +2,7 @@ import { useState } from 'react';
 import Layout from '@/components/Layout';
 import TextField from '@/components/TextField';
 import Button from '@/components/Button';
+import DropZone from '@/components/DropZone';
 import { tw } from 'twind/css';
 
 export default function Home() {
@@ -25,7 +26,9 @@ export default function Home() {
         description: `Your ONE Stop Sourcing & Supplier for all your products`
       }}>
       <form>
-        <section className={tw([`px-8 lg:px-16 py-8 lg:py-14`])}>
+        <section className={tw([`px-8 lg:px-16 py-8 lg:py-14 mx-auto`])}>
+          <DropZone maxFiles={1} onDrop={(acceptedFiles) => console.log(acceptedFiles)} />
+
           <TextField label="Dear" name="dear" type="text" value={form.dear} onChange={handleChange} />
 
           <TextField label="Message" name="message" type="text" value={form.message} onChange={handleChange} />

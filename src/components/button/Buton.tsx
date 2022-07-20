@@ -8,7 +8,7 @@ interface Props {
 }
 
 const Button = ({ primary, modifier, children, isLoading, ...rest }: Props) => {
-  const baseStyle = `font-sans font-medium py-2 px-4 border rounded disabled:opacity-75 disabled:bg-gray-500 px-16`;
+  const baseStyle = `font-medium py-3 text-lg px-4 border rounded disabled:opacity-75 disabled:bg-gray-500 px-16`;
   const styles = primary
     ? `hover:bg-green-400 text-white bg-opacity-75`
     : `bg-white text-gray-600 border-gray-300 hover:bg-gray-100`;
