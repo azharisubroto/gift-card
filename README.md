@@ -9,6 +9,7 @@
 - 🖌 **Renovate** — Dependency update tool
 - 🚫 **lint-staged** — Run linters against staged git files
 - 🗂 **Absolute import** — Import folders and files using the `@` prefix
+- 🧪 **Jest** -- Unit testing
 
 ## 🚀 Getting started
 
@@ -18,3 +19,10 @@ Run the following commands inside the project folder:
 2. `yarn dev`
 
 To view the project open `http://localhost:3000`
+
+## 🧪 Jest Testing
+1. `yarn test`
+
+## 🏗️ Build
+1. `yarn build`
+2. `yarn start`

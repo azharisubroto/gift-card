@@ -6,14 +6,21 @@ import DropZone from '@/components/DropZone';
 import { tw } from 'twind/css';
 import { handleDownloadImage } from '@/lib/helpers';
 
+/**
+ * Home page
+ */
 export default function Home() {
   const [form, setForm] = useState({
-    dear: `Azhari`,
-    message: `Rest in Peace`,
-    from: `Anissa`
+    dear: `My Love`,
+    message: `I hope this message finds you well`,
+    from: `Your love`
   });
   const [files, setFiles] = useState([]);
 
+  /**
+   * Handle field change
+   * @param e - event
+   */
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setForm({
       ...form,
@@ -21,11 +28,14 @@ export default function Home() {
     });
   };
 
+  /**
+   * Handle Drop Images
+   * @param acceptedFiles - Array
+   */
   const handleDrop = (acceptedFiles: any) => {
     acceptedFiles.map((file: File) => {
       const reader = new FileReader();
       reader.onload = (event) => {
-        // console.log(event.target.result);
         setFiles(
           acceptedFiles.map((file: File) =>
             Object.assign(file, {
@@ -39,11 +49,7 @@ export default function Home() {
   };
 
   return (
-    <Layout
-      nextSeoProps={{
-        title: process.env.NEXT_PUBLIC_APP_NAME,
-        description: `Your ONE Stop Sourcing & Supplier for all your products`
-      }}>
+    <Layout>
       <form>
         <section className={tw([`px-8 lg:px-16 py-8 lg:py-10 mx-auto`])}>
           {/* Preview */}
@@ -64,7 +70,7 @@ export default function Home() {
                   src={file?.base64}
                   alt=""
                   onLoad={() => {
-                    URL.revokeObjectURL(file.preview);
+                    URL.revokeObjectURL(file.base64);
                   }}
                 />
               </div>
@@ -84,14 +90,13 @@ export default function Home() {
           <TextField label="From" name="from" type="text" value={form.from} onChange={handleChange} />
         </section>
 
+        {/* DOWNLOAD BUTTON */}
         <div className={tw(`text-center py-8 border-t border-gray border-slate-300`)}>
           <Button primary onClick={handleDownloadImage}>
             Download
           </Button>
         </div>
       </form>
-
-      {/* <pre>{JSON.stringify(form, null, 2)}</pre> */}
 
       <style jsx>{`
         .composer {
