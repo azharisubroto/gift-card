@@ -8,7 +8,7 @@ interface Props extends ButtonHTMLAttributes<HTMLButtonElement> {
   isLoading?: boolean;
 }
 
-const Button: FC<Props> = ({ primary, modifier, children, isLoading, ...rest }) => {
+const Button: FC<Props> = ({ primary, modifier, children, isLoading, ...rest }: Props) => {
   const baseStyle = `font-medium py-3 text-lg px-4 border rounded disabled:opacity-75 disabled:bg-gray-500 px-16`;
   const styles = primary
     ? `hover:bg-green-400 text-white bg-opacity-75`
