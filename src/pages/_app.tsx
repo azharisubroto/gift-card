@@ -1,5 +1,4 @@
 import { AppProps } from 'next/app';
-// import { AppProps, NextWebVitalsMetric } from 'next/app';
 import withTwindApp from '@twind/next/app';
 import twindConfig from '@/twind.config';
 import Head from 'next/head';
@@ -15,9 +14,13 @@ function MyApp({ Component, pageProps }: AppProps) {
     <>
       <Head>
         <link rel="icon" href="/favicon.png" />
-        <title>HM Internusa</title>
+        <title>Gift Card</title>
       </Head>
+
+      {/* Component render */}
       <Component {...pageProps} />
+
+      {/* css in js */}
       <style global jsx>{`
         :root {
           --font-size-sm: clamp(0.6rem, 0.78vw + 0.4rem, 1.03rem);
