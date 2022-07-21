@@ -4,7 +4,7 @@ import TextField from '@/components/TextField';
 import DropZone from '@/components/DropZone';
 import { tw } from 'twind/css';
 import { handleDownloadImage } from '@/lib/helpers';
-import Button from '@/components/Buttonn';
+import Button from '@/components/Button';
 
 /**
  * Home page
