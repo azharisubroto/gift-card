@@ -20,7 +20,8 @@
     "paths": {
       "@/*": ["./src/*"],
       "test-utils": ["./src/lib/test-util"]
-    }
+    },
+    "typeRoots": ["./node_modules/@types", "./src/types"]
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "**/*.js"],
   "exclude": ["node_modules", "taskbox", ".storybook"]
