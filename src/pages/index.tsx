@@ -1,10 +1,10 @@
 import { useState } from 'react';
 import Layout from '@/components/Layout';
 import TextField from '@/components/TextField';
-import Button from '@/components/Button';
 import DropZone from '@/components/DropZone';
 import { tw } from 'twind/css';
 import { handleDownloadImage } from '@/lib/helpers';
+import Button from '@/components/Button';
 
 /**
  * Home page
