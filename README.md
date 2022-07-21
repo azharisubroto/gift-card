@@ -15,7 +15,7 @@
 
 Run the following commands inside the project folder:
 
-1. `yarn`
+1. `yarn install`
 2. `yarn dev`
 
 To view the project open `http://localhost:3000`
