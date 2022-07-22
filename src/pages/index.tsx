@@ -32,17 +32,18 @@ export default function Home() {
    * Handle Drop Images
    * @param acceptedFiles - Array
    */
-  const handleDrop = (acceptedFiles: any) => {
+  const handleDrop = (acceptedFiles: File[]) => {
     acceptedFiles.map((file: File) => {
       const reader = new FileReader();
+
       reader.onload = (event) => {
-        setFiles(
-          acceptedFiles.map((file: File) =>
-            Object.assign(file, {
-              base64: event.target?.result
-            })
-          )
-        );
+        const fileList = acceptedFiles.map((file: File) =>
+          Object.assign(file, {
+            base64: event.target?.result
+          })
+        ) as [];
+
+        setFiles(fileList);
       };
       reader.readAsDataURL(file);
     });
